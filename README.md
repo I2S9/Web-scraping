@@ -3,7 +3,7 @@
 ## Objectif de ce projet : 
 Créer des alertes automatiques par SMS dès qu'un mail, une information importante ou un cours a été déposé sur mon ENT (Environnement Numérique de Travail) afin de m'épargner le temps de connexion et de chargement horrible lié à l'ensemble des pages.
 
-### Qu'est-ce que le webb scraping ?
+### Qu'est-ce que le web scraping ?
 
 Le web scraping est une technique qui consiste à extraire des données directement depuis le Web sur n'importe quel type de page internet grâce à des scripts codés en Python. Il s'agit d'une technique très utilisée notamment en data analyse afin de récupérer de la donnée sur laquelle on souhaite travailler.
 
