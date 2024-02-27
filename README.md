@@ -5,7 +5,7 @@ Créer des alertes automatiques par SMS dès qu'un mail, une information importa
 
 ### Qu'est-ce que le web scraping ?
 
-Le web scraping est une technique qui consiste à extraire des données directement depuis le Web sur n'importe quel type de page internet grâce à des scripts codés en Python. Il s'agit d'une technique très utilisée notamment en data analyse afin de récupérer de la donnée sur laquelle on souhaite travailler.
+Le web scraping est une technique qui consiste à extraire des données directement depuis le Web sur n'importe quel type de page internet grâce à des scripts codés en Python. Il s'agit d'une technique très utili  sée notamment en data analyse afin de récupérer de la donnée sur laquelle on souhaite travailler.
 
 Le **scraping** est différence des API (Interface de programmation d'application) pour récupérer des données. Problème : les API sont limitées, elles ne donnent pas l'accès direct à tout type de données c'est pour cela que l'on a recourt à la méthode du "scraping".
 
@@ -23,11 +23,21 @@ Principaux bénéfices :
 
 ### Principaux obstacles 
 
+Blocages volontaires, techniques et l'automatisation des erreurs
+
 - CAPTCHA 
 
 - Blocages d'adresse IP 
 
 - Autres protections
+
+### Outils
+
+#### 1. Bibliothèques Python
+
+- **request** pour effectuer une requête HTTP/récupérer le HTML
+
+- **BeautifulSoup** pour analyser le HTML, naviguer dans le DOM (= Document Object Model)
 
 ### Références : 
 
