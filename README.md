@@ -5,15 +5,15 @@ Créer des alertes automatiques par SMS dès qu'un mail, une information importa
 
 ### Qu'est-ce que le web scraping ?
 
-Le web scraping est une technique qui consiste à extraire des données directement depuis le Web sur n'importe quel type de page internet grâce à des scripts codés en Python. Il s'agit d'une technique très utili  sée notamment en data analyse afin de récupérer de la donnée sur laquelle on souhaite travailler.
+Le web scraping est une technique qui consiste à extraire des données directement depuis le web sur n'importe quel type de page internet grâce à des scripts codés en Python (JavaScript, C#..). Il s'agit d'une technique très utilisée notamment en data analyse afin de récupérer de la donnée sur laquelle on souhaite travailler.
 
-Le **scraping** est différence des API (Interface de programmation d'application) pour récupérer des données. Problème : les API sont limitées, elles ne donnent pas l'accès direct à tout type de données c'est pour cela que l'on a recourt à la méthode du "scraping".
+Le **scraping** est différent des API = Interface de Programmation d'Application qui vont récupérer des données en ligne puisqu'elles sont limitées : elles ne donnent pas l'accès direct à tout type de données c'est pour cela que l'on a recourt à la méthode du **"scraping"**.
 
 ### A quoi cela sert ? 
 
-* Collecter des données en grande quantité rapidement et automatiquement
+#### 1. Principaux bénéfices :
 
-Principaux bénéfices : 
+* Collecter des données en grande quantité rapidement et automatiquement
 
 * Recueillir des informations stratégiques 
 
@@ -21,9 +21,9 @@ Principaux bénéfices :
 
 * Entraîner des modèles d'IA 
 
-### Principaux obstacles 
+#### 2. Principaux obstacles 
 
-Blocages volontaires, techniques et l'automatisation des erreurs
+Blocages volontaires, techniques et l'automatisation des erreurs, exemples : 
 
 - CAPTCHA 
 
@@ -35,9 +35,9 @@ Blocages volontaires, techniques et l'automatisation des erreurs
 
 #### 1. Bibliothèques Python
 
-- **request** pour effectuer une requête HTTP/récupérer le HTML
+- [Requests](https://fr.python-requests.org/en/latest/) pour effectuer une requête HTTP/récupérer le HTML
 
-- **BeautifulSoup** pour analyser le HTML, naviguer dans le DOM (= Document Object Model)
+- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) pour analyser le HTML, naviguer dans le DOM (= Document Object Model)
 
 ### Références : 
 

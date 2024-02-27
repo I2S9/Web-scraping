@@ -8,8 +8,6 @@ from pprint import pprint
 # print(response.status_code) Permet de vérfier si on a une error de code (erreur 404 par exemple)
 # print(response.raise_for_status()) Permet de lever une erreur dans le cas où on a un pb dans la requête, ici renvoie 'None' car pas de pb dans l'URL
 
-# with open('index.html', 'w') as f:
-#     f.write(response.text)
 
 
 # soup = BeautifulSoup(response.text, 'html.parser') # parser html très rapide #html5lib si page complexe
@@ -36,19 +34,30 @@ from pprint import pprint
 
 # print(aside.parent.parent.parent)  # fonctionnalités de récursivité pour naviguer 
 
-url = "http://books.toscrape.com/"
+# url = "http://books.toscrape.com/"
+# response = requests.get(url)
 
-response = requests.get(url)
+# with open('index.html', "w") as f:
+#     f.write(response.text)
 
-soup = BeautifulSoup(response.text, 'html.parser')
+with open('index.html', "r") as f:
+    html = f.read()
 
+
+
+
+
+soup = BeautifulSoup(html, 'html.parser')
 aside = soup.find('div', class_ = "side_categories")
-
 print(aside)
-
 categories_div = aside.find("ul").find('li').find('ul')
-
 categories = [child.text.strip() for child in categories_div.children if child.name]
+pprint(categories)
+images = soup.find('section').find_all('img')
+for image in images:
+    print(image.get('src')) # la méthode get permet de renvoyer 'None' si l'attribut src n'est pas présent
+
+# On a bien le "None" vis à vis de la première image (puisque nous avons supprimé l'attribut src)
 
 # On récupère le texte de toutes les catégories du site
 
@@ -58,11 +67,4 @@ categories = [child.text.strip() for child in categories_div.children if child.n
 #     if category.name:
 #         print(category.text.strip())
 
-pprint(categories)
 
-images = soup.find('section').find_all('img')
-
-for image in images:
-    print(image['src'])
-
-    
