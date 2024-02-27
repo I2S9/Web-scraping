@@ -44,9 +44,6 @@ with open('index.html', "r") as f:
     html = f.read()
 
 
-
-
-
 soup = BeautifulSoup(html, 'html.parser')
 aside = soup.find('div', class_ = "side_categories")
 print(aside)
