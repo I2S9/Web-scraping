@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from selenium import webdriver
 
 login_url = 'https://cas.univ-paris13.fr/cas/login?service=https%3A%2F%2Fent.univ-paris13.fr'
 
@@ -15,6 +16,8 @@ if response.status_code == 200:
 else:
     print(f"Échec de la connexion avec le code d'état : {response.status_code}")
     print("Assurez-vous que vos informations d'identification sont correctes.")
+
+driver = webdriver.Firefox(executable_path='./project/geckodriver.exe')
 
 # class "mailbox inbox selected unread", classe supposée pour lire les messages non lus
 
