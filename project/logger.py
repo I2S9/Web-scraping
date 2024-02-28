@@ -1,15 +1,25 @@
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.options import Options
+
+# Login address to my ENT (Digital Work Environment)
 
 login_url = 'https://cas.univ-paris13.fr/cas/login?service=https%3A%2F%2Fent.univ-paris13.fr'
 
+# ID & passwords 
+
 payload = {
-    'username': 'XXXXXXXX',
-    'password': 'XXXXXXXX'
+    'username': 'XXXXX',
+    'password': 'XXXXXX'
 }
 
 response = requests.post(login_url, data=payload)
+
+# Check if the connexion works
 
 if response.status_code == 200:
     print("Connexion réussie!")
@@ -17,7 +27,6 @@ else:
     print(f"Échec de la connexion avec le code d'état : {response.status_code}")
     print("Assurez-vous que vos informations d'identification sont correctes.")
 
-driver = webdriver.Firefox(executable_path='./project/geckodriver.exe')
 
 # class "mailbox inbox selected unread", classe supposée pour lire les messages non lus
 
