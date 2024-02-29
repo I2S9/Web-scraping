@@ -1,2 +1,8 @@
-input_password = driver.find_element(By.ID, "password")
-input_password.send_keys("Me97dy34&*" + Keys.ENTER)
+unread_mails = []
+
+
+
+
+# messages_non_lus = driver.find_elements(By.CLASS_NAME, "message unread")
+
+

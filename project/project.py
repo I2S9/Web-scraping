@@ -23,9 +23,22 @@ WebDriverWait(driver, 5).until(
 )
 
 input_password = driver.find_element(By.ID, "password")
-input_password.send_keys("XXXXXX" + Keys.ENTER)
+input_password.send_keys("XXXXXXX" + Keys.ENTER)
 
 menu = driver.find_element(By.CLASS_NAME, "NavPopInMenu")
 menu.click()
 
-time.sleep(50)
+time.sleep(10)
+
+mail = driver.find_element(By.CLASS_NAME, "wdg_mn_li_webmail")
+mail.click()
+
+time.sleep(10)
+
+# unread_mails = []
+
+# messages_non_lus = driver.find_elements(By.CLASS_NAME, "message unread")
+
+
+
+
