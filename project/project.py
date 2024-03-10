@@ -25,7 +25,7 @@ WebDriverWait(driver, 5).until(
 )
 
 input_password = driver.find_element(By.ID, "password")
-input_password.send_keys("Me97dy34&*" + Keys.ENTER)
+input_password.send_keys("XXXXXXXXXXX" + Keys.ENTER)
 
 menu = driver.find_element(By.CLASS_NAME, "NavPopInMenu")
 menu.click()
