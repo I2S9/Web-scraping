@@ -1,9 +1,11 @@
 from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from bs4 import BeautifulSoup
 import time
 
 service = Service(executable_path="./Web-scraping/project/chromedriver.exe")
@@ -16,78 +18,19 @@ WebDriverWait(driver, 5).until(
 )
 
 input_id = driver.find_element(By.ID, "username")
-input_id.send_keys("XXXXXX")
+input_id.send_keys("12200874")
 
 WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.ID, "password"))
 )
 
 input_password = driver.find_element(By.ID, "password")
-input_password.send_keys("XXXXXX" + Keys.ENTER)
+input_password.send_keys("Me97dy34&*" + Keys.ENTER)
 
 menu = driver.find_element(By.CLASS_NAME, "NavPopInMenu")
 menu.click()
 
-time.sleep(10)
+time.sleep(5)
 
 mail = driver.find_element(By.CLASS_NAME, "wdg_mn_li_webmail")
 mail.click()
-
-time.sleep(10)
-
-unread_mails = []
-
-message_rows = driver.find_elements(By.XPATH, './/tbody//tr[contains(@class, "message unread")]')
-
-for message_row in message_rows:
-    sender = message_row.find_element(By.CLASS_NAME, 'fromto').text
-    subject = message_row.find_element(By.CLASS_NAME, 'subject').text
-    date = message_row.find_element(By.CLASS_NAME, 'date').text
-    unread_mails.append([subject, sender, date])
-
-for index, message_row in enumerate(message_rows):
-    sender = message_row.find_element(By.CLASS_NAME, 'fromto').text
-    subject = message_row.find_element(By.CLASS_NAME, 'subject').text
-    date = message_row.find_element(By.CLASS_NAME, 'date').text
-    unread_mails.append([subject, sender, date])
-
-
-for index, mail in enumerate(unread_mails):
-    print(f"Objet: {mail[0]}\nExpéditeur: {mail[1]}\nDate: {mail[2]}")
-
-    message_rows[index].click()
-    driver.implicitly_wait(50)
-    mail_content = driver.find_element(By.CLASS_NAME, 'contenu_class').text
-    print(f"Contenu du mail: {mail_content}")
-    driver.back()
-    time.sleep(50) 
-
-# message_rows = driver.find_elements(By.XPATH, './/tbody//tr[contains(@class, "message unread")]')
-
-# # print(message_rows)
-
-
-# time.sleep(50)
-
-# for message_row in message_rows:
-#     sender = message_row.find_element(By.CLASS_NAME, 'fromto').text
-#     subject = message_row.find_element(By.CLASS_NAME, 'subject').text
-#     date = message_row.find_element(By.CLASS_NAME, 'date').text
-#     unread_mails.append([subject, sender, date])
-
-# for index, message_row in enumerate(message_rows):
-#     sender = message_row.find_element(By.CLASS_NAME, 'fromto').text
-#     subject = message_row.find_element(By.CLASS_NAME, 'subject').text
-#     date = message_row.find_element(By.CLASS_NAME, 'date').text
-#     unread_mails.append([subject, sender, date])
-
-# for index, mail in enumerate(unread_mails):
-#     print(f"Objet: {mail[0]}\nExpéditeur: {mail[1]}\nDate: {mail[2]}")
-
-#     message_rows[index].click()
-#     driver.implicitly_wait(50)
-#     mail_content = driver.find_element(By.CLASS_NAME, 'contenu_class').text
-#     print(f"Contenu du mail: {mail_content}")
-#     driver.back()
-#     time.sleep(50) 
-
